@@ -4,6 +4,8 @@
   apt  :
     name  : dbconfig-common
     state : "{{ phpmyadmin_dbconfig_state }}"
+    update_cache     : True
+    cache_valid_time : 3600
 
 
 - name     : pre-configure PHPMyAdmin database
@@ -19,5 +21,7 @@
   apt  :
     name  : "{{ item }}"
     state : "{{ phpmyadmin_package_state }}"
+    update_cache     : True
+    cache_valid_time : 3600
   register   : install_phpmyadmin_package
   with_items : "{{ phpmyadmin_packages }}"
