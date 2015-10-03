@@ -17,6 +17,7 @@ install:
   - "cp ./tests/ansible.cfg ./"
 
   # Get dependencies.
+  - "sudo apt-get install python-mysqldb"
   - "ansible-galaxy install achaussier.apache"
   - "ansible-galaxy install achaussier.mysql-server"
 
