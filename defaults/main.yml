@@ -21,7 +21,6 @@ phpmyadmin_dbconfig_authmethod_user  : ""
 
 # Schema management
 phpmyadmin_database_import_schema : True
-phpmyadmin_database_import_user   : "root"
 phpmyadmin_database_import_file   : "/usr/share/dbconfig-common/data/phpmyadmin/install/mysql"
 
 # Website management

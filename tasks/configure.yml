@@ -7,11 +7,11 @@
     name  : "{{ phpmyadmin_control_database | default('phpmyadmin') }}"
     state : import
     target : "{{ phpmyadmin_database_import_file }}"
-    login_user     : "{{ phpmyadmin_database_import_user }}"
-    login_password : "{{ mysql_credentials_root_password }}"
+    login_user     : "{{ phpmyadmin_db_server.user }}"
+    login_password : "{{ phpmyadmin_db_server.password }}"
   when:
-    - install_phpmyadmin_package.changed
-    - phpmyadmin_import_schema
+    - phpmyadmin_database_created.changed == True
+    - phpmyadmin_database_import_schema == True
 
 
 - name : Activate default apache configuration
