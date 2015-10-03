@@ -37,5 +37,5 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
 
   # Check phpmyadmin is accessible
-  - "sudo curl -XGET 'http://127.0.0.1/phpmyadmin'"
+  - test "200" == `curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1/phpmyadmin/`
   - "mysql -u root -D phpmyadmin -e 'show tables;'"
