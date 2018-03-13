@@ -35,6 +35,7 @@ Default role variables
     phpmyadmin_website_webserver_state         : "restarted"
 
     # Database server
+    phpmyadmin_database_preparation: true
     phpmyadmin_db_name   : "phpmyadmin"
     phpmyadmin_db_type   : "mysql"
     phpmyadmin_db_server :
