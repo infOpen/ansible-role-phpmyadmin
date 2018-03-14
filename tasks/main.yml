@@ -17,7 +17,7 @@
   tags:
     - configure
     - phpmyadmin
-
+  when: phpmyadmin_database_preparation | bool
 
 - include: configure.yml
   tags:
